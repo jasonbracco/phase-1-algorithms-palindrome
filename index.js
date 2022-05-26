@@ -1,9 +1,22 @@
-function isPalindrome(word) {
-  // Write your algorithm here
+function isPalindrome(string) {
+  const characterArray = string.split('')
+  const reverseCharacterArray = [...characterArray].reverse()
+  for (i = 0; i<characterArray.length;i++){
+    if (characterArray[i] === reverseCharacterArray[i]){
+      return true
+    }
+    else{
+      return false
+    }
+  }
 }
 
 /* 
-  Add your pseudocode here
+Create a function isPalindrome
+
+Pass isPalindrome a string
+split the characters of the word into an array
+
 */
 
 /*
@@ -12,7 +25,7 @@ function isPalindrome(word) {
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
-  // add your own custom tests in here
+  //add your own custom tests in here
   console.log("Expecting: true");
   console.log("=>", isPalindrome("racecar"));
 
@@ -20,6 +33,12 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("mom"));
+
+  console.log("Expecting: false");
+  console.log("=>", isPalindrome("jasonisthebest"))
 }
 
 module.exports = isPalindrome;
